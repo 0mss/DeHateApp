@@ -1,13 +1,10 @@
 from dotenv import load_dotenv
 import os
 
-# Importando variáveis de ambiente
+# Carrega variáveis do .env local (opcional, útil no dev local)
 load_dotenv()
 
-
 ### YouTube Configs
-# Arquivo de credenciais
-# CLIENT_SECRETS_FILE = "client_secret.json"
 
 # Escopos necessários
 SCOPES = [
@@ -15,7 +12,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtube.force-ssl"
 ]
 
-# Callback uri
+# Callback URI
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 # Variável global para armazenar credenciais do usuário
@@ -24,6 +21,7 @@ user_credentials = None
 
 
 ### Gemini Configs
+
 # Chave da API
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -32,4 +30,5 @@ LLM_MODEL = "gemini-1.5-flash"
 
 
 ### FrontEnd Configs
+
 FRONTEND_URL = os.getenv("FRONTEND_URL")
