@@ -22,4 +22,5 @@ app.include_router(auth_router.router)
 app.include_router(media_router.router)
 
 if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.getenv("PORT", 8000))  # pega a PORT ou usa 8000 padrão
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=True)
