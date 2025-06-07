@@ -1,6 +1,19 @@
 import os
 import json
 import google_auth_oauthlib.flow
+from typing import List
+from datetime import datetime
+from fastapi import HTTPException
+import google_auth_oauthlib.flow
+import google.oauth2.credentials
+import googleapiclient.discovery
+
+from app.core.config import CLIENT_SECRETS_FILE, SCOPES, REDIRECT_URI
+import app.core.config 
+from app.interfaces.platform_interface import PlatformInterface
+from app.interfaces.auth_interface import AuthInterface
+from app.domain.models.media import Media, MediaType
+from app.domain.models.comment import Comment
 
 class YouTubeClient(PlatformInterface, AuthInterface):
     def __init__(self):
