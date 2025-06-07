@@ -7,7 +7,7 @@ load_dotenv()
 
 ### YouTube Configs
 # Arquivo de credenciais
-CLIENT_SECRETS_FILE = "client_secret.json"
+# CLIENT_SECRETS_FILE = "client_secret.json"
 
 # Escopos necessários
 SCOPES = [
