@@ -1,0 +1,14 @@
+git init
+
+git add .
+
+git commit -m "config: para commits de configuração"
+git commit -m "upgrade: para commits de desenvolvimento de código"
+git commit -m "refact: para commits de refatoração"
+git commit -m "test: para commits de desenvolvimento de testes"
+
+git branch -M main
+
+git remote add origin https://github.com/vdsmascarenhas/backend_dehate.git
+
+git push -u origin main

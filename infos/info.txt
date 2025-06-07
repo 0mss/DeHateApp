@@ -1,0 +1,52 @@
+Instruções Terminal (Windows)
+
+1. Abrir terminal como administrador
+
+2. Instalar versão 3.13.3 do python
+
+<Sugestão>
+2.1. Instalar o Pyenv para gerenciar a versão do python
+
+2.1.1. Para permitir a instalação:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+2.1.2. Para instalar o pyenv:
+    Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+
+2.1.3. Para instalar a versão 3.13.3:
+    pyenv install 3.13.3
+
+2.1.4. Configurar a versão:
+    pyenv global 3.13.3
+
+2.1.5. Confirmar a versão do python:
+    python --version
+</Sugestão>
+
+3. Entrar na pasta raiz do projeto "backend_dehate"
+
+4. Criar ambiente virtual:
+    python -m venv .venv
+
+5. Ativar ambiente virtual:
+    .venv\Scripts\activate
+
+<Caso Necessário>
+5.1. Liberar temporariamente o acesso ao ambiente virtual:
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+
+5.2. Tentar ativar novamente o ambiente virtual:
+    python -m venv .venv
+</Caso Necessário>
+
+6. Instalação de Libs:
+    pip install -r requirements.txt
+
+5. Rodar a aplicação:
+    uvicorn app.main:app --reload
+
+7. Sair do localhost:
+    Ctrl + C
+
+8. Desativar ambiente virtual:
+    deactivate
