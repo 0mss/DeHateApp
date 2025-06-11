@@ -16,6 +16,8 @@ from app.domain.models.comment import Comment
 
 class YouTubeClient(PlatformInterface, AuthInterface):
     def __init__(self):
+        print("Redirect Uri: ", REDIRECT_URI)
+        print("Google Client Secret JSon: ", GOOGLE_CLIENT_SECRET_JSON)
         super().__init__()
 
     # 🔒 Utilitário privado para criar o Flow do OAuth
