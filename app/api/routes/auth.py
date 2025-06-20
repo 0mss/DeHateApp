@@ -28,6 +28,6 @@ async def auth_callback(request: Request):
     success = await youtube_client.handle_callback(code)
 
     if success:
-        return RedirectResponse("meuapp://auth/success")
+        return RedirectResponse("myapp://auth/success")
     else:
-        return RedirectResponse("meuapp://auth/failure")
+        return RedirectResponse("myapp://auth/failure")
