@@ -35,6 +35,6 @@ async def auth_callback(
 
     # Redireciona o usuário conforme o sucesso ou falha do login
     if success:
-        return RedirectResponse("meuapp://auth/success")
+        return RedirectResponse("myapp://auth/success")
     else:
-        return RedirectResponse("meuapp://auth/failure")
+        return RedirectResponse("myapp://auth/failure")
