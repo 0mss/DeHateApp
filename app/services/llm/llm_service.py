@@ -6,6 +6,7 @@ from app.interfaces.llm_interface import LLMInterface
 
 class LLMService:
     def __init__(self, llm: str):
+        # Instancia o client da LLM via factory
         self.llm: LLMInterface = LLMFactory().get_llm(llm)
 
     async def detect_negative_comments(self, comments: List[Comment]) -> List[str]:
@@ -24,6 +25,8 @@ class LLMService:
         - tenham palavras agressivas, sarcásticas ou irônicas,
         - zombem da aparência, do conteúdo ou da pessoa,
         - ou demonstrem rejeição, depreciação ou julgamento negativo, mesmo que em tom leve ou genérico do vídeo.
+
+        Caso nenhum comentário se encaixe nessas premissas, retorne apenas um espaço simples: " "
 
         (comentários - início)
 
