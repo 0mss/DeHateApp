@@ -20,7 +20,7 @@ class CommentService(CommentInterface):
             for media_id in media_ids:
                 comments = await self.platform_service.fetch_comments(media_id)
 
-                negative_comments_ids = NoneAdd commentMore actions
+                negative_comments_ids = None
 
                 if comments:
                     negative_comments_ids = await self.llm_service.detect_negative_comments(comments)
